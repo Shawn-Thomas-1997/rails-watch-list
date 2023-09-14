@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-center align-items-center">
+  <div class="text-center w-50">
+    <div class="container p-4 rounded shadow">
+      <h1>Create a New Movie List</h1>
+      <%= simple_form_for [@list] do |f| %>
+        <div class="form-group">
+          <%= f.input :name, input_html: { class: 'form-control shadow-sm' } %>
+        </div>
+        <%= f.submit "Create List", class: "btn btn-primary shadow-sm mt-3" %>
+      <% end %>
+    </div>
+  </div>
+</div>

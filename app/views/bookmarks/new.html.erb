@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-center align-items-center">
+  <div class="text-center w-50">
+    <div class="container p-4 rounded shadow">
+      <h1>Add a Bookmark!</h1>
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <div class="form-group">
+          <%= f.input :movie_id, collection: Movie.all.map { |m| [m.title, m.id] }, prompt: 'Select a movie', input_html: { class: 'form-control shadow-sm' } %> 
+        </div>
+        <div class="form-group">
+          <%= f.input :comment, input_html: { class: 'form-control shadow-sm' } %>
+        </div>
+        <%= f.submit 'Create Bookmark', class: 'btn btn-primary shadow-sm mt-3' %>
+      <% end %>
+    </div>
+  </div>
+</div>
